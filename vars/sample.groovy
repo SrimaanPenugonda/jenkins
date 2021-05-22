@@ -15,7 +15,7 @@ def call() {
                 steps {
                    sh 'echo Declarative pipeline in shared lib'
                 }
-            stages('Test'){
+            stage('Test'){
                 script {
                     sample.info 'Starting'
                     sample.warning 'Nothing to do,its warning only'
