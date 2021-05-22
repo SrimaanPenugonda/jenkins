@@ -11,12 +11,9 @@ def call() {
         agent any
 
         stages {
-            stage('Shared Lib Demo') {
+            stage('Pipeline in Shared Lib Demo') {
                 steps {
-                    script {
-                        sample.info 'Starting'
-                        sample.warning 'Nothing to do,its warning only'
-                    }
+                   sh 'echo Declarative pipeline in shared lib'
                 }
             }
         }//stages
