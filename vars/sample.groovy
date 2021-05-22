@@ -19,8 +19,10 @@ def call() {
             stage('Test'){
                 steps {
                     script {
-                        sample.info 'Starting'
-                        sample.warning 'Nothing to do,its warning only'
+//                        sample.info 'Starting'
+//                        sample.warning 'Nothing to do,its warning only' npt working like this
+                        info('Starting')
+                        warning('Nothing to do!')
                     }
                 }
             }//stage2
