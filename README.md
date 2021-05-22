@@ -21,3 +21,15 @@ Blue Ocean - fundamentally for pipelines
 
 pipeline syntax:
 https://www.jenkins.io/doc/book/pipeline/syntax/
+
+Groove Code:
+pipeline{
+  agent any
+   stages {
+     stage('One'){
+       steps {
+          sh 'echo Welcome to stage One'
+}
+}
+}
+}
