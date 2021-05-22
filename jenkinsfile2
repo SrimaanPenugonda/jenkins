@@ -6,8 +6,8 @@ pipeline{
     stages{
         stage('Shared Lib Demo'){
             steps{
-                log.info 'Starting'
-                log.warning 'Nothing to do,its warning only'
+                sample.info 'Starting'
+                sample.warning 'Nothing to do,its warning only'
             }
         }
     }//stages
