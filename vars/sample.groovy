@@ -13,16 +13,18 @@ def call() {
         stages {
             stage('Pipeline in Shared Lib Demo') {
                 steps {
-                   sh 'echo Declarative pipeline in shared lib'
+                    sh 'echo Declarative pipeline in shared lib'
                 }
+            }//sateg1
             stage('Test'){
-                script {
-                    sample.info 'Starting'
-                    sample.warning 'Nothing to do,its warning only'
+                steps {
+                    script {
+                        sample.info 'Starting'
+                        sample.warning 'Nothing to do,its warning only'
+                    }
                 }
-            }
+            }//stage2
 
-            }
         }//stages
     }//pipeline
-}
+}//call
