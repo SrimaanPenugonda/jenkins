@@ -11,5 +11,5 @@ pipeline{
                 sh 'echo Welcome to stage two'
             }
         }
-    }
-}
+    }//stages
+}//pipeline
