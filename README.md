@@ -33,3 +33,13 @@ pipeline{
 }
 }
 }
+
+Jenkins Shared Lib:
+sample is one of the shared library - sample.groovy
+mange plugins- globoal configuraion system - Global Pipeline Lib-
+roboshop
+default version : main
+modern SCM
+and save it
+
+
