@@ -5,9 +5,11 @@ pipeline{
 
     stages{
         stage('Shared Lib Demo'){
-            steps{
-                sample.info 'Starting'
-                sample.warning 'Nothing to do,its warning only'
+            steps {
+                script {
+                    sample.info 'Starting'
+                    sample.warning 'Nothing to do,its warning only'
+                }
             }
         }
     }//stages
