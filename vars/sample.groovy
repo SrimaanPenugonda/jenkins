@@ -11,6 +11,7 @@ def call() {
         agent any
 
         stages {
+
             stage('Pipeline in Shared Lib Demo') {
                 steps {
                     sh 'echo Declarative pipeline in shared lib'
