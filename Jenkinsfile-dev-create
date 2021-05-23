@@ -8,7 +8,7 @@ pipeline{
             steps{
                 build job: 'Roboshop-Releases/VPC', parameters: [string(name: 'ENV', value: 'dev')]
             }
-        }
+        }//VPC
 
         stage('ALB & DATABASES'){
             parallel{
@@ -27,26 +27,38 @@ pipeline{
 
         stage('COMPONENTS'){
             parallel{
-                stage('CATALOGUE'){
-                    build job: 'Roboshop-Releases/CATALOGUE', parameters: [string(name: 'ENV', value: 'dev')]
+                stage('CATALOGUE') {
+                    steps {
+                        build job: 'Roboshop-Releases/CATALOGUE', parameters: [string(name: 'ENV', value: 'dev')]
+                    }
                 }
-                stage('USER'){
-                    build job: 'Roboshop-Releases/USER', parameters: [string(name: 'ENV', value: 'dev')]
+                stage('USER') {
+                    steps {
+                        build job: 'Roboshop-Releases/USER', parameters: [string(name: 'ENV', value: 'dev')]
+                    }
                 }
-                stage('CART'){
-                    build job: 'Roboshop-Releases/CART', parameters: [string(name: 'ENV', value: 'dev')]
+                stage('CART') {
+                    steps {
+                        build job: 'Roboshop-Releases/CART', parameters: [string(name: 'ENV', value: 'dev')]
+                    }
                 }
-                stage('PAYMENT'){
-                    build job: 'Roboshop-Releases/PAYMENT', parameters: [string(name: 'ENV', value: 'dev')]
+                stage('PAYMENT') {
+                    steps {
+                        build job: 'Roboshop-Releases/PAYMENT', parameters: [string(name: 'ENV', value: 'dev')]
+                    }
                 }
-                stage('SHIPPING'){
-                    build job: 'Roboshop-Releases/SHIPPING', parameters: [string(name: 'ENV', value: 'dev')]
+                stage('SHIPPING') {
+                    steps {
+                        build job: 'Roboshop-Releases/SHIPPING', parameters: [string(name: 'ENV', value: 'dev')]
+                    }
                 }
             }//parallel
         }//components
 
-        stage('FRONTEND'){
-            build job: 'Roboshop-Releases/FRONTEND', parameters: [string(name: 'ENV', value: 'dev')]
+        stage('FRONTEND') {
+            steps {
+                build job: 'Roboshop-Releases/FRONTEND', parameters: [string(name: 'ENV', value: 'dev')]
+            }
         }//frontend
     }//stages
 }//pipeline
