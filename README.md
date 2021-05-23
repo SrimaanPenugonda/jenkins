@@ -110,3 +110,7 @@ SCM - give jenkins git
 BUILD - Process job DSLs
 give seed/roboshop.groovy at DSL script and save and run this
 it create Roboshop-Release folder and VPC job under it
+
+S55:
+Create a wraper jenkins file - to create a total infra automatically
+Maven Project Configuration - # of executors - 5

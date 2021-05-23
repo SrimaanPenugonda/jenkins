@@ -1,0 +1,52 @@
+//jenkins pipeline to create full infra
+pipeline{
+    agent any
+
+    stages{
+
+        stage('VPC'){
+            steps{
+                build job: 'Roboshop-Releases/VPC', parameters: [string(name: 'ENV', value: 'dev')]
+            }
+        }
+
+        stage('ALB & DATABASES'){
+            parallel{
+                stage('ALB'){
+                    steps{
+                        build job: 'Roboshop-Releases/ALB', parameters: [string(name: 'ENV', value: 'dev')]
+                    }
+                }
+                stage('DATABASES'){
+                    steps{
+                        build job: 'Roboshop-Releases/DATABASES', parameters: [string(name: 'ENV', value: 'dev')]
+                    }
+                }
+            }//parallel
+        }//ALB&DB
+
+        stage('COMPONENTS'){
+            parallel{
+                stage('CATALOGUE'){
+                    build job: 'Roboshop-Releases/CATALOGUE', parameters: [string(name: 'ENV', value: 'dev')]
+                }
+                stage('USER'){
+                    build job: 'Roboshop-Releases/USER', parameters: [string(name: 'ENV', value: 'dev')]
+                }
+                stage('CART'){
+                    build job: 'Roboshop-Releases/CART', parameters: [string(name: 'ENV', value: 'dev')]
+                }
+                stage('PAYMENT'){
+                    build job: 'Roboshop-Releases/PAYMENT', parameters: [string(name: 'ENV', value: 'dev')]
+                }
+                stage('SHIPPING'){
+                    build job: 'Roboshop-Releases/SHIPPING', parameters: [string(name: 'ENV', value: 'dev')]
+                }
+            }//parallel
+        }//components
+
+        stage('FRONTEND'){
+            build job: 'Roboshop-Releases/FRONTEND', parameters: [string(name: 'ENV', value: 'dev')]
+        }//frontend
+    }//stages
+}//pipeline
