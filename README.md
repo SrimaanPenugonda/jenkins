@@ -114,3 +114,4 @@ it create Roboshop-Release folder and VPC job under it
 S55:
 Create a wraper jenkins file - to create a total infra automatically
 Maven Project Configuration - # of executors - 5
+create jenkins pipeline to create full infra - dev-create
