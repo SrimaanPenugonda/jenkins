@@ -10,18 +10,17 @@ pipeline{
             }
         }//VPC
 
-        stage('ALB & DATABASES'){
-                stage('ALB'){
-                    steps{
-                        build job: 'Roboshop-Releases/ALB', parameters: [string(name: 'ENV', value: 'dev')]
-                    }
-                }
-                stage('DATABASES'){
-                    steps{
-                        build job: 'Roboshop-Releases/DATABASES', parameters: [string(name: 'ENV', value: 'dev')]
-                    }
-                }
-        }//ALB&DB
+        stage('ALB'){
+            steps{
+                build job: 'Roboshop-Releases/ALB', parameters: [string(name: 'ENV', value: 'dev')]
+            }
+        }//ALB
+
+        stage('DATABASES'){
+            steps{
+                build job: 'Roboshop-Releases/DATABASES', parameters: [string(name: 'ENV', value: 'dev')]
+            }
+        }//DB
 
         stage('COMPONENTS'){
             parallel{
