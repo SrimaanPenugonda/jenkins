@@ -16,11 +16,11 @@ pipeline{
             }
         }//ALB
 
-//        stage('DATABASES'){
-//            steps{
-//                build job: 'Roboshop-Releases/DATABASES', parameters: [string(name: 'ENV', value: 'dev')]
-//            }
-//        }//DB
+        stage('DATABASES'){
+            steps{
+                build job: 'Roboshop-Releases/DATABASES', parameters: [string(name: 'ENV', value: 'dev')]
+            }
+        }//DB
 
         stage('COMPONENTS'){
             parallel{
