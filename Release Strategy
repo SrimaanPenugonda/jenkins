@@ -1,0 +1,14 @@
+1.Compile the code /Install Dependencies
+2.Quality Check- Sonarqube - code quality check
+3. Test cases - Unit Test Cases
+    sonarqube - 9000 port
+    sonar scanner installation /setup
+    cd opt/
+    curl -L -O https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.1.2450-linux.zip
+    unzip sonar-scanner-cli-4.6.1.2450-linux.zip                                                            rm -rf *
+    mv sonar-scanner-cli-4.6.1.2450-linux sonar
+    ln -a opt/sonar/bin/sonar-scanner /bin/sonar-scanner  - it will create a symbolic link and able to run the cmd sonar-scanner
+
+    sonar-scanner -Dsonar.projectName=payment -Dsonar.sources=. -Dsonar.host.url=http://3.236.121.125/:9000(sonar server ip) -Dsonar.login=6409462b98489bc11c3c0bad3000e6b565322ea1(token from SonarQube project)
+
+
