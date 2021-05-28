@@ -10,5 +10,25 @@
     ln -a opt/sonar/bin/sonar-scanner /bin/sonar-scanner  - it will create a symbolic link and able to run the cmd sonar-scanner
 
     sonar-scanner -Dsonar.projectName=payment -Dsonar.sources=. -Dsonar.host.url=http://3.236.121.125/:9000(sonar server ip) -Dsonar.login=6409462b98489bc11c3c0bad3000e6b565322ea1(token from SonarQube project)
+  sonar-scanner \
+    -Dsonar.projectKey=cart \
+    -Dsonar.sources=. \
+    -Dsonar.host.url=http://34.204.182.34:9000 \
+    -Dsonar.login=4615d98599161a2a7eaff750cd4cf79a7f59443e
 
+INFO: More about the report processing at http://34.204.182.34:9000/api/ce/task?id=AXmqA0D07OqU0c-_56r6
+task?id is the Analysis id ..
 
+curl -u admin:sonar http://${HOSTIP}:9000/api/qualitygates/project_status?projectKey=${KEY}
+
+S58:
+Linting :
+    Analyze the code for potential errors
+    git commit hooks - pre-commit
+    before release the artifact fo Linting.. as below command
+    npm install --save jslint -y
+       steps {
+              sh '''
+                jslint '**/*.js' || true
+              '''
+            }
