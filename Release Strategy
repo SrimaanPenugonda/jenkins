@@ -24,9 +24,11 @@ curl -u admin:sonar http://${HOSTIP}:9000/api/qualitygates/project_status?projec
 S58:
 Linting :
     Analyze the code for potential errors
+    Standard Code Errors
     git commit hooks - pre-commit
     before release the artifact fo Linting.. as below command
-    npm install --save jslint -y
+    yum install nodejs
+   npm install --save jslint -g
        steps {
               sh '''
                 jslint '**/*.js' || true
