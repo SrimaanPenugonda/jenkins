@@ -33,4 +33,11 @@ Linting :
               sh '''
                 jslint '**/*.js' || true
               '''
-            }
+           }
+
+S59:
+https://lucid.app/lucidchart/5a111912-88ea-41cf-9d9f-8089ecb704c4/edit?shared=true&page=Xnw7tKDAj8ma#
+TBD - Trunk Based Development
+    1.Company follows Trunk Based Development (Against Branch Strategy)
+    2. Trunk Based Development strategy - look at it
+    3.
