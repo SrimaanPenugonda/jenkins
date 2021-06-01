@@ -1,0 +1,24 @@
+S60: Containers CI/CD pipeline creation
+1. Containers is Linux Feature
+2. It works only in Linux OS
+3.Control groups and namespaces features - containers runs based on this feature and security comes from this features
+4.Control Groups - Containers capable of consuming all resources of OS,Yet we need to control the utilization and its been done by control groups - limit the resources,manage the usage of resources
+5. Namespaces - meant to isolate the resources , ex netns  is network namespaces for containers
+6. Docker - why docker
+    1.Simple EcoSystem -  whole ecosystem is simple and docker image part is simple to setup
+    2. Best UX - User eXperience - Simpler to Manage and extends its features to interact over APIs
+7.Docker brings immutability - Never modify the existing container
+8.Any container runtimes will have two types
+    1.High Level Runtime -
+    2.Low Level Runtime
+9. Docker architecture :
+    Docker Client
+    Docker Host (Docker daemon)
+    ContainerD
+10.Docker Image - An image is a read-only template with instructions for creating a Docker container.
+    to run any docker container it needs an docker image
+11.Installation - 2 types
+    Docker runs by default by root user -
+    if we give permission to normal user then its gain most of the privileges as root user
+    it causes security issues - to avoid this ROOTLESS installation is preferable
+    where normal user can run containers even with out root privilege
