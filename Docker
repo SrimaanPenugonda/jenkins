@@ -22,3 +22,46 @@ S60: Containers CI/CD pipeline creation
     if we give permission to normal user then its gain most of the privileges as root user
     it causes security issues - to avoid this ROOTLESS installation is preferable
     where normal user can run containers even with out root privilege
+    curl -s https://get.docker.com | sudo bash
+    curl -s https://get.docker.com/rootless | bash
+    https://docs.docker.com/engine/security/rootless/ - follow each step carefully
+S61:
+12. Docker Image (container)- https://hub.docker.com/
+    we will have many images and can reuse in ur server
+    docker pull nginx - pull nginx image
+    docker images - list the images
+    docker rmi nginx - remove the image
+13. Docker Versioning
+    Any docker image we pull, image will have certain version, by its pull latest image
+    In docker terminology version is called tag
+    docker nginx:tag
+    docker nginx:1.20
+14.docker run nginx - pull(if not there) and run
+    docker run -d nginx - detached mode ,run in background
+    docker ps -a
+15.Every Container we create we get container id and container name
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+b065e88b7514   nginx     "/docker-entrypoint.…"   36 seconds ago   Up 33 seconds   80/tcp    elated_shtern
+
+we can update the container id and names
+docker run -d --name nginx nginx
+CONTAINER ID   IMAGE     COMMAND                  CREATED             STATUS             PORTS     NAMES
+c6b1e4b4605f   nginx     "/docker-entrypoint.…"   59 minutes ago      Up 59 minutes      80/tcp    nginx
+b065e88b7514   nginx     "/docker-entrypoint.…"   About an hour ago   Up About an hour   80/tcp    elated_shtern
+16. container low level info using docker inspect option
+    docker inspect nginx (name of the container/ container id)
+17. port expose can be done in two ways
+    dynamic and static ports
+    Dynamic port ranges from 49153 to 65535
+    to open dynamic port use -P option
+    docker run -d -P nginx
+    to open static port give -p option with
+    docker run -d -p <hostport>:<containerport>
+    docker run -d -p 80:80 nginx
+18. docker ps -a -q - gives all the containers id
+19. docker rm -f $(docker ps -a -q)
+20. to get into container - docker exec -it <containerid>
+21. voume of container can be mapped using -v option -v <hostpath>:<containerpath>
+docker run -d -v /home/centos/data/:/data/db mongo - persistent volume path
+    /home/centos/data/:/data/db  this is persistent path where if we remove the container.
+    we can use same volume while creating another container so that data will be persistent
