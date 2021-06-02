@@ -78,10 +78,25 @@ docker run -d -v /home/centos/data/:/data/db mongo - persistent volume path
     parse from --env-file
     docker run --env-file ./env centos:7 env
 26. Container Resources
-    docker run -it centos:7 bash - bash will let inside container
+    docker run -it centos:7 bash - directly we can give image with -it option/  bash will let inside container
         ls
         yum install epel-release -y
         yum install stress -y   - epel-release dependency
     docker run --memory 256M -it centos:7 bash - limit the memory
     yum install epel-release -y it will be very slow.. as memory is limited
-27.
+27. Containers by default consume all CPU and MEM of host machine. This is nice feature where VMs cant do this. it leads to problem where some containers using more resources due to bug or some issues.. this leads to performance issues in other containers
+    To avoid this always give some limitations .. as best practise
+    --cpu and --mem are the options can be used to control the resources
+28. Containers have the capability of self healing by auto restart
+    docker run --restart string
+    string - no
+            on-failure Restart only if exits with non zero exit status
+            always - restart always
+            unless-stopped
+    docker run --restart always centos:7 sleep 10
+    most of the scenarios we wont do outside restart
+29.containers has to auto restart based on health status
+    docker run --health-cmd option
+    docker run --health-cmd 'ls' -d centos:7 sleep 1000
+
+
