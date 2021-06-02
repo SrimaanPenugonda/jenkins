@@ -99,4 +99,22 @@ docker run -d -v /home/centos/data/:/data/db mongo - persistent volume path
     docker run --health-cmd option
     docker run --health-cmd 'ls' -d centos:7 sleep 1000
 
+DOCKERFILE: docker hub registry
+1.Docker can build images automatically by reading the instructions from a Dockerfile.
+2.A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
+vim Dockerfile
+    FROM centos:7 - like invoking the official/base image | to build this image docker build -t sample .
+    RUN yum install httpd -y
+    CMD httpd -DFOREGROUND
+3.docker build -t sample . - create own image sample with above Dockerfile
+4. docker login - give uname pwd
+5. docker push docker.io/srimaanaws2021/sample.v1 - now it will push ur image to ur dockerhub
+    docker push docker.io/uname/image.tag
+6. docker run -d docker.io/srimaanaws2021/sample.v1 - now it will pull and run ur image
+
+
+
+
+
+
 
