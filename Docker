@@ -34,8 +34,8 @@ S61:
 13. Docker Versioning
     Any docker image we pull, image will have certain version, by its pull latest image
     In docker terminology version is called tag
-    docker nginx:tag
-    docker nginx:1.20
+    docker run nginx:tag
+    docker run nginx:1.20
 14.docker run nginx - pull(if not there) and run
     docker run -d nginx - detached mode ,run in background
     docker ps -a
@@ -48,6 +48,8 @@ docker run -d --name nginx nginx
 CONTAINER ID   IMAGE     COMMAND                  CREATED             STATUS             PORTS     NAMES
 c6b1e4b4605f   nginx     "/docker-entrypoint.…"   59 minutes ago      Up 59 minutes      80/tcp    nginx
 b065e88b7514   nginx     "/docker-entrypoint.…"   About an hour ago   Up About an hour   80/tcp    elated_shtern
+ docker run --name some-mongo -d mongo:tag
+... where some-mongo is the name you want to assign to your container and tag is the tag specifying the MongoDB version you want
 16. container low level info using docker inspect option
     docker inspect nginx (name of the container/ container id)
 17. port expose can be done in two ways
@@ -65,3 +67,21 @@ b065e88b7514   nginx     "/docker-entrypoint.…"   About an hour ago   Up About
 docker run -d -v /home/centos/data/:/data/db mongo - persistent volume path
     /home/centos/data/:/data/db  this is persistent path where if we remove the container.
     we can use same volume while creating another container so that data will be persistent
+22.container path will be diff for every image.. for nginx
+    /some/content:/usr/share/nginx/html
+23. we can parse info to containers using variables. most of the application uses variables rather than config file
+24. we can parse variables either directly or from file
+    docker run centos:7 env
+    parse directly using -e option
+    docker run -e URL=google.com centos:7 env
+25. from file
+    parse from --env-file
+    docker run --env-file ./env centos:7 env
+26. Container Resources
+    docker run -it centos:7 bash - bash will let inside container
+        ls
+        yum install epel-release -y
+        yum install stress -y   - epel-release dependency
+    docker run --memory 256M -it centos:7 bash - limit the memory
+    yum install epel-release -y it will be very slow.. as memory is limited
+27.
