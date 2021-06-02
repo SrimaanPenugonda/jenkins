@@ -111,6 +111,10 @@ vim Dockerfile
 5. docker push docker.io/srimaanaws2021/sample.v1 - now it will push ur image to ur dockerhub
     docker push docker.io/uname/image.tag
 6. docker run -d docker.io/srimaanaws2021/sample.v1 - now it will pull and run ur image
+7. EXPOSE 80
+8. ENV
+9. ADD or COPY - Vimp option
+
 
 
 
