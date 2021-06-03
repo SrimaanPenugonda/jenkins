@@ -109,7 +109,7 @@ vim Dockerfile
 3.docker build -t sample . - create own image sample with above Dockerfile
 4. docker login - give uname pwd
 5. docker push docker.io/srimaanaws2021/sample.v1 - now it will push ur image to ur dockerhub
-    docker push docker.io/uname/image.tag
+    docker push docker.io/uname/image:tag
 6. docker run -d docker.io/srimaanaws2021/sample.v1 - now it will pull and run ur image
 7. EXPOSE 80
 8. ENV
