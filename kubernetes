@@ -10,5 +10,24 @@ WHY Kubernetes? Google product
 1.Backed by CNCF
 2. Cloud Native Product
 2.Architecture
-  Master Nodes - where kubernetes installed
+  Master Nodes - where kubernetes installed (Amazon EKS)
   Compute Nodes - where docker installed/container running
+3.Kubernetes master components
+    API Server - which interacts with all components
+        users,UI,scheduler all will talk with API server only
+    ETCD - it is a DB
+    Scheduler-
+9. What process runs on Kubernetes Master Node?
+The Kube-api server process runs on the master node and serves to scale the deployment of more instances.
+API Server: The API server acts as an entry point for all the REST commands used for controlling the cluster.
+Etcd: etcd components, store configuration detail, and wright values. It communicates with the most component to receive commands and work. It also manages network rules and port forwarding activity.
+Scheduler: The scheduler schedules the tasks to the slave node. It stores the resource usage information for every slave node. It is responsible for distributing the workload.
+Kubelet: It gets the configuration of a Pod from the API server and ensures that the described containers are up and running.
+Pods: A pod is a combination of single or multiple containers that logically run together on nodes.
+
+kubectl cluster-info
+kubectl get nodes
+kubectl get nodes -o wide
+kubectl api-versions
+cat .kube/config
+
