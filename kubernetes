@@ -1,6 +1,14 @@
-1.Kubernetes
-  cloud native thing
-  lot of community support
+S63:
+eksctl - eks cluster by amazon
+kubectl - kubernetes cluster
+kubectl – A command line tool for working with Kubernetes clusters.
+eksctl – A command line tool for working with EKS clusters that automates many individual tasks.
+
+Who is orchestrator :
+
+WHY Kubernetes? Google product
+1.Backed by CNCF
+2. Cloud Native Product
 2.Architecture
   Master Nodes - where kubernetes installed
   Compute Nodes - where docker installed/container running
