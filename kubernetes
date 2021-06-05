@@ -1,0 +1,6 @@
+1.Kubernetes
+  cloud native thing
+  lot of community support
+2.Architecture
+  Master Nodes - where kubernetes installed
+  Compute Nodes - where docker installed/container running
