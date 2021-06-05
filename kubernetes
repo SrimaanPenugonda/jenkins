@@ -30,4 +30,19 @@ kubectl get nodes
 kubectl get nodes -o wide
 kubectl api-versions
 cat .kube/config
+kubernetes uses authorization than authentication - with some key
+
+POD - Kubernetes deals with POD -
+ A pod is a combination of single or multiple containers that logically run together on nodes.
+POD should have at least contain one container in it
+containers in POD can share same storage
+containers in POD will use same network stack
+
+create pod:
+kubectl run sample --image=nginx (imperative cmd)
+we always prefer declarative method so yaml file
+
+
+
+
 
