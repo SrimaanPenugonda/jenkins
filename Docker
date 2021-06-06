@@ -63,7 +63,7 @@ b065e88b7514   nginx     "/docker-entrypoint.…"   About an hour ago   Up About
 18. docker ps -a -q - gives all the containers id
 19. docker rm -f $(docker ps -a -q)
 20. to get into container - docker exec -it <containerid>
-21. voume of container can be mapped using -v option -v <hostpath>:<containerpath>
+21. volume of container can be mapped using -v option -v <hostpath>:<containerpath>
 docker run -d -v /home/centos/data/:/data/db mongo - persistent volume path
     /home/centos/data/:/data/db  this is persistent path where if we remove the container.
     we can use same volume while creating another container so that data will be persistent
