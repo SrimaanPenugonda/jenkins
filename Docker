@@ -3,7 +3,7 @@ S60: Containers CI/CD pipeline creation
 2. It works only in Linux OS
 3.Control groups and namespaces features - containers runs based on this feature and security comes from this features
 4.Control Groups - Containers capable of consuming all resources of OS,Yet we need to control the utilization and its been done by control groups - limit the resources,manage the usage of resources
-5. Namespaces - meant to isolate the resources , ex netns  is network namespaces for containers
+5. Namespaces - meant to isolate the resources , ex:netns  is network namespaces for containers
 6. Docker - why docker
     1.Simple EcoSystem -  whole ecosystem is simple and docker image part is simple to setup
     2. Best UX - User eXperience - Simpler to Manage and extends its features to interact over APIs
