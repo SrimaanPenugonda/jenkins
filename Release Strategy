@@ -44,3 +44,8 @@ TBD - Trunk Based Development
 
 
 
+one amazon account AMI's can be shared by diff accounts - like dev AMI can be shared to SIT accounts like that
+after Dev AMI is approved like everything working fine .. after approval from leads
+it will promote to higher -env like QA/SIT and prod promotion
+ AMI sharing will do to avoid time/cost and resources
+
